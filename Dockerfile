@@ -1,7 +1,7 @@
 FROM gcc as builder
 WORKDIR /app
 COPY hello.c ./
-RUN gcc hello.c -o hello
+RUN gcc -static -o hello hello.c
 
 FROM scratch
 COPY --from=builder /app/hello /

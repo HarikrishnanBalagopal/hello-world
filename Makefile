@@ -60,4 +60,4 @@ test: $(C_TARGETS)
 
 .PHONY: build-multi-arch
 build-multi-arch:
-	docker buildx build --platform linux/amd64,linux/s390x,linux/arm/v7,linux/ppc64le,linux/arm/v5,linux/arm64/v8 -t hello-world:latest .
+	docker buildx build --platform linux/amd64,linux/s390x,linux/arm/v7,linux/ppc64le,linux/arm/v5,linux/arm64/v8 --push -t docker.io/myusername/hello-world:latest .
